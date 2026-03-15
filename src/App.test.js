@@ -12,9 +12,9 @@ test('toggles the person profile', () => {
   render(<App />);
 
   fireEvent.click(screen.getByRole('button', { name: /show profile/i }));
-  expect(screen.getByRole('heading', { name: /john doe/i })).toBeInTheDocument();
-  expect(screen.getByText(/software developer/i)).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /abraham lincoln/i })).toBeInTheDocument();
+  expect(screen.getByText(/president of the united states/i)).toBeInTheDocument();
 
   fireEvent.click(screen.getByRole('button', { name: /hide profile/i }));
-  expect(screen.queryByRole('heading', { name: /john doe/i })).not.toBeInTheDocument();
+  expect(screen.queryByRole('heading', { name: /abraham lincoln/i })).not.toBeInTheDocument();
 });

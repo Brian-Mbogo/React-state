@@ -6,10 +6,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       Person: {
-        fullName: 'John Doe',
-        bio: 'A software developer passionate about React and modern web technologies.',
-        imgSrc: process.env.PUBLIC_URL + '/person-profile.svg',
-        profession: 'Software Developer'
+        fullName: 'Abraham Lincoln',
+        bio: 'A 19th-century American statesman. This profile is a demo for React class component state and lifecycle methods.',
+        imgSrc: process.env.PUBLIC_URL + '/person.jpg',
+        profession: '16th President of the United States'
       },
       shows: false,
       timeInterval: 0

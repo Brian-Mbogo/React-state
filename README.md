@@ -42,8 +42,12 @@ This value is shown as: “Time since component mounted: X seconds”.
 
 ## Assets
 
-- Profile image: `public/person-profile.svg`
-- In code: `imgSrc` is set to `process.env.PUBLIC_URL + '/person-profile.svg'` so it works in dev + production builds.
+- Profile image: `public/person.jpg`
+- In code: `imgSrc` is set to `process.env.PUBLIC_URL + '/person.jpg'` so it works in dev + production builds.
+
+### Image source
+
+`public/person.jpg` is downloaded from Wikimedia Commons via Special:FilePath (a 512px-wide version of the “Abraham Lincoln O-77 by Gardner, 1863” photograph).
 
 ## Project structure (relevant files)
 
