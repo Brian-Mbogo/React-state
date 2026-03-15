@@ -1,4 +1,86 @@
-# Getting Started with Create React App
+# React State — Class Component Documentation
+
+## Overview
+
+This project is a small Create React App that demonstrates **React state in a class-based component** by rendering a person profile that can be toggled on/off, plus a timer that shows the number of seconds since the component mounted.
+
+## Features
+
+- **Class component**: `App` is implemented as `class App extends React.Component`.
+- **State shape**:
+  - `Person`: `{ fullName, bio, imgSrc, profession }`
+  - `shows`: boolean that controls whether the profile is visible
+  - `timeInterval`: number of seconds since mount
+- **Toggle UI**: a button switches `shows` between `true` and `false`.
+- **Lifecycle + interval**: `componentDidMount()` starts a `setInterval()` timer; `componentWillUnmount()` clears it.
+
+## How it works
+
+### 1) Person profile data
+
+The profile information lives in `this.state.Person` (full name, bio, image source, profession). When `shows` is `true`, the UI renders:
+
+- the image (`imgSrc`)
+- the full name
+- profession
+- bio
+
+### 2) Show/Hide toggle
+
+Clicking the button calls `toggleShow()`, which flips the boolean `shows`. The profile section renders conditionally using:
+
+- `shows && (...)`
+
+### 3) Time since mount
+
+When the component mounts:
+
+- `mountedAt` is saved (`Date.now()`)
+- `setInterval()` updates `timeInterval` every second
+
+This value is shown as: “Time since component mounted: X seconds”.
+
+## Assets
+
+- Profile image: `public/person-profile.svg`
+- In code: `imgSrc` is set to `process.env.PUBLIC_URL + '/person-profile.svg'` so it works in dev + production builds.
+
+## Project structure (relevant files)
+
+- `src/App.js` — class component, state, lifecycle, toggle logic, UI
+- `src/App.css` — basic styles for the profile and image
+- `public/person-profile.svg` — local image used by the profile
+
+## Run locally
+
+### Development
+
+- `npm start`
+
+If PowerShell blocks `npm` scripts, use:
+
+- `npm.cmd start`
+
+### Production build
+
+- `npm run build`
+
+Or, if needed:
+
+- `npm.cmd run build`
+
+## Customize
+
+Edit `src/App.js` and update:
+
+- `this.state.Person.fullName`
+- `this.state.Person.bio`
+- `this.state.Person.profession`
+- `this.state.Person.imgSrc` (point it to another file in `public/` if you add one)
+
+---
+
+## Create React App reference
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
